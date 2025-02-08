@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSL RED CARPET 2025 - Participation Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body class="min-h-screen p-4">
+    <div class="form-container">
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div class="p-8 text-center">
+             <img src="https://i.ibb.co/Pv5bm6rZ/Whats-App-Image-2024-12-05-at-13-59-06-50f0ece7.jpg" alt="DSL Red Carpet 2025" class="w-full rounded-lg">
+            <div class="mt-4">
+              <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-800">DSL RED CARPET 2025</h1>
+              <p class="text-base sm:text-lg md:text-xl mt-2">10th to 14th February 2025 & 11th to 15th February 2025 @ Pattaya/Bangkok/ Thailand</p>
+            </div>
+          </div>
+
+            <form id="participantForm" class="p-6 md:p-8 space-y-6 relative">
+                <div id="loading-animation" class="hidden mt-4 flex items-center justify-center gap-2">
+                    <p>Hang On!</p>  <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                </div>
+
+                <div id="thankYouMessage" class="animate-fadeIn" style="display: none">
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md relative" role="alert">
+                        <strong class="font-bold">Thank you!</strong>
+                        <span class="block sm:inline"> Your application has been submitted.</span>
+
+                    </div>
+                </div>
+
+                <div  id="formInputs">
+                    <div class="animate-fadeIn">
+                        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Company Details</h2>
+                        <div class="grid md:grid-cols-2 gap-4 relative">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="companySearch">Search Company *</label>
+                                <input type="text" id="companySearch" name="companySearch" required class="w-full p-3 border-2 rounded-lg" placeholder="Type to search...">
+                                 <div id="searchResults" class="absolute mt-2 space-y-2 w-full" style="max-height: 200px; overflow-y: auto; display: none;"></div>
+                                <div id="companySearchError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="customerCode">Customer Code *</label>
+                                <input type="text" id="customerCode" name="customerCode" required class="w-full p-3 border-2 rounded-lg" readonly>
+                                <div id="customerCodeError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="animate-fadeIn">
+                        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Participant Information</h2>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="participantName">Full Name *</label>
+                                <input type="text" id="participantName" name="participantName" required class="w-full p-3 border-2 rounded-lg">
+                                <div id="participantNameError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="surname">Surname *</label>
+                                <input type="text" id="surname" name="surname" required class="w-full p-3 border-2 rounded-lg">
+                                 <div id="surnameError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="otherNames">Other Names</label>
+                                <input type="text" id="otherNames" name="otherNames" class="w-full p-3 border-2 rounded-lg">
+                                <div id="otherNamesError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-fadeIn">
+                        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Personal Details</h2>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Gender *</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="gender" value="Male" required class="w-5 h-5">
+                                        Male
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="gender" value="Female" class="w-5 h-5">
+                                        Female
+                                    </label>
+                                </div>
+                                 <div id="genderError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="dateOfBirth">Date of Birth *</label>
+                                 <input type="date" id="dateOfBirth" name="dateOfBirth" required class="w-full p-3 border-2 rounded-lg"  min="1925-01-01" max="2025-12-31">
+                                 <div id="dateOfBirthError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="age">Age *</label>
+                                <input type="text" id="age" name="age" required class="w-full p-3 border-2 rounded-lg" readonly>
+                                 <div id="ageError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="mobileNumber">Mobile Number *</label>
+                                <input type="tel" id="mobileNumber" name="mobileNumber" required class="w-full p-3 border-2 rounded-lg"  pattern="07[0-9]{8}" maxlength="10">
+                                <div id="mobileNumberError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-fadeIn">
+                        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Passport Details</h2>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="passportNumber">Passport Number *</label>
+                                <input type="text" id="passportNumber" name="passportNumber" required class="w-full p-3 border-2 rounded-lg" pattern="[A-Z]{1}[0-9]{7,9}">
+                                <div id="passportNumberError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="issueDate">Issue Date *</label>
+                                <input type="date" id="issueDate" name="issueDate" required class="w-full p-3 border-2 rounded-lg">
+                                <div id="issueDateError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="expiryDate">Expiry Date *</label>
+                                <input type="date" id="expiryDate" name="expiryDate" required class="w-full p-3 border-2 rounded-lg" readonly>
+                                 <div id="expiryDateError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-fadeIn">
+                        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Preferences</h2>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium" for="tshirtSize">T-Shirt Size *</label>
+                                <select id="tshirtSize" name="tshirtSize" required class="w-full p-3 border-2 rounded-lg">
+                                    <option value="S">Small (S)</option>
+                                    <option value="M">Medium (M)</option>
+                                    <option value="L">Large (L)</option>
+                                    <option value="XL">Extra Large (XL)</option>
+                                </select>
+                                 <div id="tshirtSizeError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Meal Preference *</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="mealPreference" value="Vegetarian" required class="w-5 h-5">
+                                        Vegetarian
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="mealPreference" value="Non-Vegetarian" class="w-5 h-5">
+                                        Non-Vegetarian
+                                    </label>
+                                </div>
+                                 <div id="mealPreferenceError" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-fadeIn">
+                        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Additional Participants</h2>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2">
+                                <input type="radio" name="additionalParticipants" value="Yes" required class="w-5 h-5">
+                                Yes, I have additional participants
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="radio" name="additionalParticipants" value="No" class="w-5 h-5">
+                                No additional participants
+                            </label>
+                        </div>
+                        <div id="additionalParticipantsError" class="text-red-500 text-sm mt-1"></div>
+                    </div>
+                    <div class="mt-2">
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
+                            <span id="buttonText">Submit Application</span>
+                            <div id="spinner" class="hidden">
+                                <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

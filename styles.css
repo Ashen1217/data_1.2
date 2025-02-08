@@ -1,0 +1,173 @@
+/*-----------------*/
+/* CUSTOM STYLES */
+/*-----------------*/
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Apply animations using these classes */
+.animate-fadeIn { animation: fadeIn 0.6s ease-out; }
+.animate-slideIn { animation: slideIn 0.5s ease-out; }
+
+body {
+  font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  position: relative;
+  background-color: #e0e0e0;  /* Light gray background */
+}
+
+/* Form Container for Scrolling (makes the form area scrollable, not the whole page) */
+.form-container {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Highlight Error Style (for duplicate passport numbers, etc.) */
+.highlight-error {
+  border: 3px solid red !important;  /* Red border */
+  background-color: #ffe6e6 !important; /* Light red background */
+}
+
+/* Validation Error Style (for general validation errors, like format) */
+.validation-error-style {
+  border: 3px solid red !important;
+  background-color: #ffe6e6 !important;
+}
+
+/* Form Input Styles (text, number, date, select, and tel) */
+.form-container #formInputs input[type="text"],
+.form-container #formInputs input[type="number"],
+.form-container #formInputs input[type="date"],
+.form-container #formInputs select,
+.form-container #formInputs input[type="tel"] { /* Added tel type */
+  border: 2px solid #000000; /* Black border */
+  padding: 10px;
+  border-radius: 0.5rem; /* Rounded corners (8px equivalent) */
+  width: 100%;
+  margin-bottom: 1rem; /* Space below inputs */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Styles when input fields are focused */
+.form-container #formInputs input[type="text"]:focus,
+.form-container #formInputs input[type="number"]:focus,
+.form-container #formInputs input[type="date"]:focus,
+.form-container #formInputs input[type="tel"]:focus, /* Added tel type */
+.form-container #formInputs select:focus {
+  outline: none;  /* Remove the default browser outline */
+  border-color: #007bff; /* Change border color to blue */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Add a light blue glow */
+}
+
+/* Radio and Checkbox Styles */
+.form-container input[type="radio"],
+.form-container input[type="checkbox"] {
+  margin-right: 0.5rem; /* Space between radio/checkbox and label */
+}
+
+/* Radio and Checkbox Label Styles */
+.form-container .space-y-2 > label {
+  display: flex;         /* Make the label and input flex containers */
+  align-items: center;  /* Vertically center the items */
+  gap: 0.5rem;          /* Space between the input and the text */
+}
+
+/* Submit Button Styles */
+.form-container button[type="submit"] {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;            /* Full width */
+  display: flex;          /* Use flexbox for centering */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;           /* Space between text and spinner */
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Spinner Animation (for loading) */
+.form-container .spinner {
+  display: none; /* Hidden by default */
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form-container .spinner > div {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* Loading Animation Styles (for submit button) */
+.form-container button[type="submit"].loading .spinner {
+  display: inline-block; /* Show spinner when loading */
+}
+
+.form-container button[type="submit"].loading span {
+  visibility: hidden; /* Hide text when loading */
+}
+
+
+/* --- Search Results Container Styles --- */
+/* Styles the search results box */
+#searchResults {
+    border: 1px solid #ccc;  /* Light gray border */
+    border-radius: 8px;     /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: white; /* White background */
+    padding: 8px; /* Add some padding inside the box */
+    z-index: 10;  /*  VERY IMPORTANT: Makes sure it appears ABOVE other elements */
+    position: absolute; /*  VERY IMPORTANT:  Positions it relative to the input */
+    display: none;  /* Hide it initially */
+    max-height: 200px;  /* Limit the height, make it scrollable */
+    overflow-y: auto;   /* Add vertical scrollbar if needed */
+    width: calc(100% - 2rem); /*  width eka adjust karanna */
+}
+
+
+/* --- Individual Search Result Item Styles --- */
+/* Styles each individual search result (each company name) */
+#searchResults > div {
+    padding: 8px 12px;      /* Padding inside each item */
+    cursor: pointer;        /* Change the cursor to a pointer (hand) on hover */
+    transition: background-color 0.2s ease; /* Smooth background transition */
+}
+
+/* Hover effect for search results */
+#searchResults > div:hover {
+    background-color: #f0f8ff; /* Light blue background on hover */
+}
+
+/* Add a border-bottom to all result items except the last one */
+#searchResults > div:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
+
+/* --- No Results Message Styles --- */
+/* Styles for the "No matching companies found" message */
+#searchResults p {
+    padding: 8px 12px;
+    color: #777; /* Gray text color */
+}
