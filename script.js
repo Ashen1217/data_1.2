@@ -1,5 +1,5 @@
 // VERY IMPORTANT: Replace this with your *ACTUAL* deployed Google Apps Script web app URL.
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw_GTDAxLqnHufN8hr7v-dkrkesQH5UOrl0aqpV3H7Wbf5YzC--q3TFdXLL3wBIi9Eb/exec'; // !!! CHANGE THIS !!!
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxwCOPTB7DYA5NfzDgJUbtVBH4eFBd5VljTsl7X528dcqp0CPL1flLlZxo8carqo2Er/exec'; // !!! CHANGE THIS !!!
 
 // Calculates age in years (or months if less than 1 year).
 function calculateAge(dob) {
